@@ -1,0 +1,8 @@
+.container {
+    padding: 60px;
+    width: 1000px;
+    margin: 0   auto;
+    background: url("https://fotosale.by/wp-content/uploads/2018/04/2-sky-blue.jpg") no-repeat center top / cover;
+    height: 100vh;
+
+}

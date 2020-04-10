@@ -1,0 +1,46 @@
+.message {
+    margin: 0 auto;
+    background: white;
+    border-radius:15px;
+    height:85px;
+    width:500px;
+    padding:20px;
+    position:relative;
+}
+
+
+
+.message:before {
+    border: 20px solid transparent;
+    border-bottom-color: white;
+    position: absolute;
+    top: 68%;
+    right: 515px;
+    content: '';
+}
+.message:after {
+    content: '';
+    border: 80px solid ;
+    border-image: url("https://c7.hotpng.com/preview/971/668/835/patrick-star-mr-krabs-drawing-infant-patrick-dab.jpg");
+    border-right: 0;
+    border-top: 0;
+    top: 34%;
+    right: 570px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+
+
+.time {
+    text-align: right;
+}
+
+.message h6  {
+    margin: 0;
+    padding: 0;
+}
+
+span {
+    word-wrap: break-word;
+}
