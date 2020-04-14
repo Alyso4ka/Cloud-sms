@@ -7,22 +7,31 @@ import Span from "./Span/Span";
 
 class Sib extends React.Component {
 
-
-    newMessageText = React.createRef();
-
     state = {
         startNumber: 0,
         text: '',
-
+        error: false,
+        title: ""
     }
 
 
     addClickHandler = () => {
-        let newText = this.newMessageText.current.value;
-        this.newMessageText.current.value = "";
-        this.onChangeText(" Привет " + newText); // вызываем нашу функцию onChangeText
-        this.setState({startNumber: this.state.startNumber + 1})
+        let newText = this.state.title;
+
+        if (newText !== '') {
+            this.onChangeText(' Привет ' + newText); // вызываем нашу функцию onChangeText
+            this.setState({startNumber: this.state.startNumber + 1})
+            this.setState({error: false, title: ''});
+        } else {
+            this.setState({error: true});
+        }
+
+
     };
+
+    onTitleChanged = (e) => {
+        this.setState({title: e.currentTarget.value})
+    }
 
     onChangeText = (qwe) => { // передаем через парметры новое значение для функции
         let newMessage = [...this.state.text, qwe]; // копируем придущую функцию-массив addClickHandler, а после него всталяет новый парамент значение <qwe>
@@ -35,7 +44,12 @@ class Sib extends React.Component {
             <div className={styles.sib}>
 
                 <Span startNumber={this.startNumber}/>
-                <Input newMessageText={this.newMessageText}/>
+                <Input error={this.state.error}
+                       addClickHandler={this.addClickHandler}
+                       title={this.state.title}
+                       onTitleChanged={this.onTitleChanged}
+
+                />
                 <Button addClickHandler={this.addClickHandler}/>
                 <p>{this.state.text}</p>
 
