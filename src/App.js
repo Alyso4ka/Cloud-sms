@@ -9,23 +9,16 @@ import {HashRouter, Route} from "react-router-dom";
 
 
 const App = () => {
-
-    let nameQualities = [
-        {qualitie: "Punctual", id: "1"},
-        {qualitie: "Sportsman", id: "2"},
-        {qualitie: "Сonfident", id: "3"}
-    ];
     return (
 
         <HashRouter>
             <div className="App">
                 <div className={styles.container}>
                     <NavBar/>
-
-                    <Route path="/all" render={() => <MyName/> }/>
-                    <Route path="/all" render={() => <Qualities/> }/>
-                    <Route path="/all" render={() => <Message/> }/>
-                    <Route path="/sib" render={() => <Sib /> }/>
+                    <MyName/>
+                    <Route path="/all" render={() => <Qualities/>}/>
+                    <Message/>
+                    <Route path="/sib" render={() => <Sib/>}/>
 
                 </div>
             </div>

@@ -7,16 +7,20 @@ import {NavLink} from "react-router-dom";
 const NavBar = () => {
 
     return (
-        <nav className={styles.navBar}>
-            <NavLink className={styles.menu} to="/all">
-                МЕНЮ
+        <div className={styles.navBar}>
+            <div className={styles.menu}>
+                <NavLink to="/all"> МЕНЮ </NavLink>
                 <div className={styles.drop}>
-                    <div><NavLink to="/sib">Понедельник</NavLink></div>
-                    <div><NavLink to="/#">Вторник</NavLink></div>
+                    <div>
+                        <NavLink to="/sib">Понедельник</NavLink>
+                    </div>
+                    <div>
+                        <NavLink to="/#">Вторник</NavLink>
+                    </div>
                 </div>
-            </NavLink>
+            </div>
 
-        </nav>
+        </div>
     )
 };
 
