@@ -15,7 +15,7 @@ const NavBar = () => {
                         <NavLink to="/sib">Понедельник</NavLink>
                     </div>
                     <div>
-                        <NavLink to="/#">Вторник</NavLink>
+                        <NavLink to="/tue">Вторник</NavLink>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,10 @@ import Qualities from "./Commponents/Qualities/Qualities";
 import Sib from "./Commponents/Sib/Sib";
 import NavBar from "./Commponents/NavBar/NavBar";
 import {HashRouter, Route} from "react-router-dom";
+import TodoList from "./Commponents/TodoList/TodoList";
+
+
+
 
 
 const App = () => {
@@ -14,11 +18,14 @@ const App = () => {
         <HashRouter>
             <div className="App">
                 <div className={styles.container}>
+
                     <NavBar/>
                     <MyName/>
                     <Route path="/all" render={() => <Qualities/>}/>
                     <Message/>
                     <Route path="/sib" render={() => <Sib/>}/>
+                    <Route path="/tue" render={() => <TodoList />}/>
+
 
                 </div>
             </div>
