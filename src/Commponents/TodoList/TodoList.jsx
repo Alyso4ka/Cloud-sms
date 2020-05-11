@@ -63,6 +63,13 @@ class TodoList extends React.Component {
 
     }
 
+    deleteTask = (taskId) => {
+ let deleteFilterTask = this.state.tasks.filter((taskId) => {
+     return taskId
+ })
+    }
+
+
     changeFilter = (newFilterValue) => {
         this.setState({
             filterValue: newFilterValue
@@ -97,6 +104,7 @@ class TodoList extends React.Component {
                     <TodoListHeader addTask={this.addTask}/>
                     <TodoListTasks changeStatus={this.changeStatus}
                                    changeTitle={this.changeTitle}
+                                   deleteTask={this.deleteTask}
                                    tasks={this.state.tasks.filter(t => {
                                        if (this.state.filterValue === "All") {
                                            return true;

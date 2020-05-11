@@ -28,15 +28,18 @@ class TodoListTask extends React.Component {
 
 
 
+
     render = () => {
 
         let taskClassName = this.props.task.isDone ? 'todoList-task done' : 'todoList-task';
         return (
             <div className={taskClassName}>
+
                 <input type="checkbox" checked={this.props.task.isDone}
-                       onChange={this.onIsDoneChanged}
-                />
-                {this.state.isEditMode
+                       onChange={this.onIsDoneChanged}/>
+
+
+                    {this.state.isEditMode
                     ? <input
                         value={this.props.task.title}
                         autoFocus={true}
@@ -49,7 +52,10 @@ class TodoListTask extends React.Component {
                 }
 
 
+
                 <span> - priority: {this.props.task.priority} </span>
+                <button onClick={this.props.deleteTask}>DELETE</button>
+
             </div>
         );
     }
